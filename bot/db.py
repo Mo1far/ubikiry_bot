@@ -18,7 +18,7 @@ class Users(BaseModel):
 
     @classmethod
     def get_user(cls, user_id):
-        return cls.get(user_id == user_id)
+        return cls.get(user_id=user_id)
 
     @classmethod
     def get_ref_count(cls, user_id):
@@ -41,4 +41,4 @@ class Users(BaseModel):
         user, created = cls.get_or_create(user_id=user_id, username=username, first_name=first_name, last_name=last_name, referral_list='')
 
 # создаём таблицы, запустить 1 раз и закомментировать
-db.create_tables([Users])
+# db.create_tables([Users])
