@@ -27,6 +27,7 @@ async def start(msg: types.Message):
 
 @dp.message_handler(commands=['get_link'])
 @dp.message_handler(regexp='My refferal link')
+@rate_limit(5, 'start')
 async def get_ref_link(msg: types.Message):
     u = await bot.get_chat_member(TARGET_CHAT_ID, msg.from_user.id)
     if u.status == 'left':
@@ -38,6 +39,7 @@ async def get_ref_link(msg: types.Message):
 
 @dp.message_handler(commands=['ref_count'])
 @dp.message_handler(regexp='Count of my refferals')
+@rate_limit(5, 'start')
 async def ref_count(msg: types.Message):
     count = Users.get_ref_count(msg.from_user.id)
     await msg.answer(texts.ref_count.format(count))
@@ -45,12 +47,6 @@ async def ref_count(msg: types.Message):
 
 @dp.message_handler(commands=['help'])
 @dp.message_handler(regexp='Help')
+@rate_limit(5, 'start')
 async def help(msg: types.Message):
     await msg.answer(texts.help)
-
-
-@dp.message_handler(commands=['g'])
-async def h(msg: types.Message):
-    chat_id = msg.chat.id
-    user_id = msg.from_user.id
-    await msg.answer(f"Chat id - {chat_id} user_id-{user_id}")

@@ -22,7 +22,8 @@ class Users(BaseModel):
 
     @classmethod
     def get_ref_count(cls, user_id):
-        return cls.get_user(user_id).ref
+        u = cls.get_user(user_id)
+        return u.ref
 
     @classmethod
     def increase_ref_count(cls, user_id, referral_id):
