@@ -18,5 +18,5 @@ BOT_TOKEN = 'Your Token'
 ```
 # Run
  ```
- $ python3.8 main.py
+ $ screen python3.8 main.py
  ```
