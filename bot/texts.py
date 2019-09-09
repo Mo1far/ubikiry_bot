@@ -1,42 +1,36 @@
 start = """
-    Welcome to the CryptoTribunal Bot! I am a small part of our global CryptoTribunal project. We provide a platform for consolidating defrauded token holders in order to take collective actions towards persecuting fraudulent projects. 
+CRYPTO TRIBUNAL
++++++++++++++++
+Since the start of Bitcoin many scams have arisen in the crypto scene. Billions have gone missing in scam ICO's and IEO's!
 
-Please visit our website https://cryptotribunal.org/ if you need more information about our project.
+Because of that we founded the Crypto Tribunal, a platform where you as an investor get a voice! And not just a voice, you even get the possibility to have your funds returned; Even when you got scammed years ago we can seek justice for you!
 
-Here is how the platform works:
-1.  We will have two types of participants; victims and the legal professionals that will work on the case such as lawyers, detectives, analysts, etc. 
-2. We will predominantly work with fraudulent projects where money has been collected using the founders/team’s real names, and where there is a high possibility that the raised funding can be obtained and returned.
-3. To organize interaction within the community, we planned to create a private blockchain with representatives of the community movement (like an association of lawyers) given supervisory rights.
-4. All fraudulent projects will be ranked by the amount of stolen funds and the activity of the community.
-5. In order to finance each stage of the procedure, there will be a small fundraising event. If we reach a certain stage and it becomes clear that what we are doing has no prospect of succeeding, we would have avoided expending huge sums on useless research. Otherwise, the work continues until we get the result we are all after!
+The goal of the Crypto Tribunal is to return the funds to the investors and by doing so simultaneously return trust to the crypto scene as well.
 
 
-In appreciation of the support received, we will like to reward our community for every person you invite to Ubikiri starting now! For every friend invited, you now stand the chance to receive rewards just by doing the following:
+DID YOU GOT SCAMMED?
+If your answer on that is 'YES' or if you know someone who got scammed within the crypto scene, please go to https://cryptotribunal.org and fill out the contact form so we can investigate the project and you have a chance of getting your money refunded!
 
-STEP ONE:
-1. Join our community on Telegram @SilentNotary
-2. Send “get_link” command to CryptoTribunal Bot and get a referal link
-3. Share referal link with your friends
 
-STEP TWO:
-1. Registered on Ubikiri either by visiting the website (https://ubikiri.com/) or pushing the Sign up button on Telegram. For Telegram:
-    a. Enter your phone number in Telegram authorization window and press “Next” button
-    b. You will get message from Telegram bot, press “Confirm” button
-    c. Push “Accept” and then ”Log in” buttons in Telegram authorization window to log in in Ubikiri
-2. Create IDL wallet in Ubikiri wallets section
+AIRDROP
++++++++
+Apart from the above we would want to share some rewards with you to celebrate the launch of our main platform: IDLedgers.com;
 
-And that's it! 
+STEPS
++++++
+#1 Join our community on Telegram @Cryptotribunal
+#2 Push “My referral link” button to retrieve the referral link.
+#3 Share the referral link with your friends!
+#4 Go to https://ubikiri.com and sign up.
+#5 Create IDL wallet in the Wallets Section on Ubikiri.
 
-Rewards will be distributed to your IDL wallet as follows: 
-- You will get 10 000 LAW* for your own registration via Telegram (if it’s your first account) right after registration
-- You will get 10 000 LAW* for each invited friend, right after your friend finishes their Ubikiri registration via Telegram and create their IDL wallets
+The rewards will be spread to the IDL wallet you created in the last step. You will receive 10 000 LAW for registering and 10 000 for referrals. 
 
-* LAW is the native cryptocurrency for the IDL platform (http://idledgers.com/).
 """
 
 
 help = """
-    There is a list of commands:
+There is a list of commands:
 /start – start bot 
 /help – get list of commands 
 /ref_count – get list of invited friends who finished registration
@@ -44,10 +38,11 @@ help = """
 """
 
 ref_count = """
-    Number of friends who was invited: {}
+Number of friends who was invited: {}
 We hope they will register in the Ubikiri, create IDL wallets and you will get a reward!
+
 """
 
 get = """
-Share this link with your friends: {}
+Share this link with your friends:  {}
 """
