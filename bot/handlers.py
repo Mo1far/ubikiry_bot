@@ -26,7 +26,7 @@ async def start(msg: types.Message):
 
 
 @dp.message_handler(commands=['get_link'])
-@dp.message_handler(regexp='My refferal link')
+@dp.message_handler(regexp='My referral link')
 @rate_limit(5, 'start')
 async def get_ref_link(msg: types.Message):
     u = await bot.get_chat_member(TARGET_CHAT_ID, msg.from_user.id)
@@ -38,7 +38,7 @@ async def get_ref_link(msg: types.Message):
 
 
 @dp.message_handler(commands=['ref_count'])
-@dp.message_handler(regexp='Count of my refferals')
+@dp.message_handler(regexp='Count my referrals')
 @rate_limit(5, 'start')
 async def ref_count(msg: types.Message):
     count = Users.get_ref_count(msg.from_user.id)
