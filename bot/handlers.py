@@ -2,7 +2,7 @@ from aiogram import types
 
 from bot.core import dp, bot
 from bot.db import Users
-from bot.config import TARGET_CHAT_ID
+from bot.config import TARGET_CHAT_ID, RATE_LIMIT
 import bot.texts as texts
 import bot.keyboards as keyboards
 from bot.middleware import rate_limit
@@ -10,7 +10,7 @@ ref_link_template = 'https://telegram.me/MyFirstFackingBot?start={}'
 
 
 @dp.message_handler(commands=['start'])
-@rate_limit(5, 'start')
+@rate_limit(RATE_LIMIT, 'start')
 async def start(msg: types.Message):
     user_id = msg.from_user.id
     username = msg.from_user.username
@@ -27,7 +27,7 @@ async def start(msg: types.Message):
 
 @dp.message_handler(commands=['get_link'])
 @dp.message_handler(regexp='My referral link')
-@rate_limit(5, 'start')
+@rate_limit(RATE_LIMIT, 'start')
 async def get_ref_link(msg: types.Message):
     u = await bot.get_chat_member(TARGET_CHAT_ID, msg.from_user.id)
     if u.status == 'left':
@@ -39,7 +39,7 @@ async def get_ref_link(msg: types.Message):
 
 @dp.message_handler(commands=['ref_count'])
 @dp.message_handler(regexp='Count my referrals')
-@rate_limit(5, 'start')
+@rate_limit(RATE_LIMIT, 'start')
 async def ref_count(msg: types.Message):
     count = Users.get_ref_count(msg.from_user.id)
     await msg.answer(texts.ref_count.format(count))
@@ -47,6 +47,6 @@ async def ref_count(msg: types.Message):
 
 @dp.message_handler(commands=['help'])
 @dp.message_handler(regexp='Help')
-@rate_limit(5, 'start')
+@rate_limit(RATE_LIMIT, 'start')
 async def help(msg: types.Message):
     await msg.answer(texts.help)

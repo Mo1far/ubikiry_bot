@@ -9,6 +9,7 @@ SKIP_UPDATES = True
 BOT_TOKEN = '635489344:AAH7s0PY_qOqnNepnxFA5sLzfCF6LdnKGXs' # 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11
 LOGFILE = '' # logs/bot.log
 OWNER_ID = 0 # your id for access to admin panel
+RATE_LIMIT = 0.5  # You can use  command every N seconds
 
 # Proxy
 PROXY_URL = '' # http or socks5://user:pass@host:port
