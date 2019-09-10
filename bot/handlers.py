@@ -6,7 +6,7 @@ from bot.config import TARGET_CHAT_ID, RATE_LIMIT
 import bot.texts as texts
 import bot.keyboards as keyboards
 from bot.middleware import rate_limit
-ref_link_template = 'https://telegram.me/MyFirstFackingBot?start={}'
+ref_link_template = 'https://telegram.me/{}?start={}'
 
 
 @dp.message_handler(commands=['start'])
@@ -29,11 +29,12 @@ async def start(msg: types.Message):
 @dp.message_handler(regexp='My referral link')
 @rate_limit(RATE_LIMIT, 'start')
 async def get_ref_link(msg: types.Message):
+    bot_name = await bot.get_me()
     u = await bot.get_chat_member(TARGET_CHAT_ID, msg.from_user.id)
     if u.status == 'left':
         await msg.answer("First enter the chat", reply_markup=keyboards.chat_kb)
     else:
-        ref_link = ref_link_template.format(msg.from_user.id)
+        ref_link = ref_link_template.format(msg.from_user.id, bot_name.username)
         await msg.answer(texts.get.format(ref_link))
 
 
