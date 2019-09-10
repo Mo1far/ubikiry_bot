@@ -42,3 +42,10 @@ Edit RATE_LIMIT in bot/config.py
 ```angular2html
 if RATE_LIMIT=5 You can use command every 5 seconds
 ```
+
+# Set target chat
+1 - get the chat id by adding @chatid_echo_bot to the chat bot, you can remove the bot from the chat after receiving chat_id
+2 - Set chat_id in bot/config.py 
+```angular2html
+TARGET_CHAT_ID = 'your chat_id'
+```
