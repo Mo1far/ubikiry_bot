@@ -34,7 +34,7 @@ async def get_ref_link(msg: types.Message):
     if u.status == 'left':
         await msg.answer("First enter the chat", reply_markup=keyboards.chat_kb)
     else:
-        ref_link = ref_link_template.format(msg.from_user.id, bot_name.username)
+        ref_link = ref_link_template.format(bot_name.username, msg.from_user.id)
         await msg.answer(texts.get.format(ref_link))
 
 
