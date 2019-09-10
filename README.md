@@ -2,12 +2,10 @@
 ```
 git clone https://github.com/Mo1far/ubikiry_bot.git
 ```
-# Install packages
+# Install system requirements
 ```
-sudo apt-get install python3.8-dev
-sudo apt-get install python3.8-distutils
-python3.8 -m pip install -r requirements.txt
-
+python3.8-dev
+python3.8-distutils
 ```
 
 # Install requirements
@@ -40,7 +38,7 @@ BOT_TOKEN = 'Your Token'
 # Edit rate limit
 Edit RATE_LIMIT in bot/config.py
 
-Example
+#### Example
 ```angular2html
 if RATE_LIMIT=5 You can use command every 5 seconds
 ```
