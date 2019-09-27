@@ -7,8 +7,8 @@ import aiohttp
 # Bot
 SKIP_UPDATES = True
 BOT_TOKEN = '635489344:AAH7s0PY_qOqnNepnxFA5sLzfCF6LdnKGXs' # 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11
-LOGFILE = '' # logs/bot.log
-OWNER_ID = 0 # your id for access to admin panel
+LOGFILE = ''  # logs/bot.log
+OWNER_ID = 0  # your id for access to admin panel
 RATE_LIMIT = 0.5  # You can use  command every N seconds
 
 # Proxy
@@ -58,3 +58,22 @@ PROXY_AUTH = aiohttp.BasicAuth(login=PROXY_LOGIN, password=PROXY_PASS)
 
 
 TARGET_CHAT_ID = '-320534198'
+
+
+# message sending block
+INPUT_FILE_WITH_ID = 'input_id.txt'  # path to input file
+OUTPUT_FILE_WITH_ID = 'result_id.txt'  # path to output file
+MESSAGE_TEXT = 'Привет это тестовая рассылка 123'
+USE_KEYBOARD = True  # use True or False
+BTN_LIST = [{'text': '1 кнопка', 'link': 'https://t.me/durov_russia'},
+            {'text': '2 кнопка', 'link': 'https://t.me/durov'},
+            {'text': '2 кнопка', 'link': 'https://ubikiri.com/'}
+            ]
+
+BTN_1_TEXT = '1 кнопка'
+BTN_1_URL = 'https://t.me/durov_russia'
+BTN_2_TEXT = '1 кнопка'
+BTN_2_URL = 'https://t.me/durov'
+BTN_3_TEXT = '1 кнопка'
+BTN_3_URL = 'https://ubikiri.com/'
+SECRET_PHRASE = 'sendf'

@@ -2,7 +2,8 @@ from aiogram import types
 
 from bot.core import dp, bot
 from bot.db import Users
-from bot.config import TARGET_CHAT_ID, RATE_LIMIT
+from bot.config import TARGET_CHAT_ID, RATE_LIMIT, USE_KEYBOARD, INPUT_FILE_WITH_ID, MESSAGE_TEXT, OUTPUT_FILE_WITH_ID,\
+    SECRET_PHRASE
 import bot.texts as texts
 import bot.keyboards as keyboards
 from bot.middleware import rate_limit
@@ -51,3 +52,20 @@ async def ref_count(msg: types.Message):
 @rate_limit(RATE_LIMIT, 'start')
 async def help(msg: types.Message):
     await msg.answer(texts.help)
+
+
+@dp.message_handler(regexp='sendf')
+@rate_limit(RATE_LIMIT, 'start')
+async def sending(msg: types.Message):
+    id_list = [id.strip() for id in open(INPUT_FILE_WITH_ID).readlines()]
+
+    kb = keyboards.generate_markup()
+    for id in id_list:
+        if USE_KEYBOARD:
+            await bot.send_message(id, MESSAGE_TEXT, reply_markup=kb)
+        else:
+            await bot.send_message(id, MESSAGE_TEXT)
+        with open(OUTPUT_FILE_WITH_ID, 'a') as file:
+            file.writelines(id)
+            file.writelines('\n')
+    await msg.reply('Done')

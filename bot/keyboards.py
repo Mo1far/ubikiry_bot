@@ -1,5 +1,7 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, KeyboardButton
 
+from bot.config import BTN_LIST
+
 chat_kb = InlineKeyboardMarkup().add(InlineKeyboardButton('Join chat', 'https://t.me/cryptotribunal'))
 
 sign_up_kb = InlineKeyboardMarkup().add(InlineKeyboardButton('Join chat', 'https://t.me/cryptotribunal'))
@@ -12,3 +14,11 @@ count_btn = KeyboardButton("Count my referrals")
 help_btn = KeyboardButton("Help")
 
 menu_kb.row(link_btn, count_btn, help_btn)
+
+
+def generate_markup():
+    kb  = InlineKeyboardMarkup()
+    for btn in BTN_LIST:
+        btn = InlineKeyboardButton(btn['text'], btn['link'])
+        kb.add(btn)
+    return kb
