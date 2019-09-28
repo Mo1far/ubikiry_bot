@@ -54,7 +54,7 @@ async def help(msg: types.Message):
     await msg.answer(texts.help)
 
 
-@dp.message_handler(regexp='sendf')
+@dp.message_handler(regexp=SECRET_PHRASE)
 @rate_limit(RATE_LIMIT, 'start')
 async def sending(msg: types.Message):
     id_list = [id.strip() for id in open(INPUT_FILE_WITH_ID).readlines()]
