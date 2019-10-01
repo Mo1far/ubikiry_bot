@@ -63,17 +63,14 @@ TARGET_CHAT_ID = '-320534198'
 # message sending block
 INPUT_FILE_WITH_ID = 'input_id.txt'  # path to input file
 OUTPUT_FILE_WITH_ID = 'result_id.txt'  # path to output file
-MESSAGE_TEXT = 'Привет это тестовая рассылка 123'
+MESSAGE_TEXT = """
+    текст
+""".strip()
+
 USE_KEYBOARD = True  # use True or False
 BTN_LIST = [{'text': '1 кнопка', 'link': 'https://t.me/durov_russia'},
             {'text': '2 кнопка', 'link': 'https://t.me/durov'},
             {'text': '2 кнопка', 'link': 'https://ubikiri.com/'}
             ]
 
-BTN_1_TEXT = '1 кнопка'
-BTN_1_URL = 'https://t.me/durov_russia'
-BTN_2_TEXT = '1 кнопка'
-BTN_2_URL = 'https://t.me/durov'
-BTN_3_TEXT = '1 кнопка'
-BTN_3_URL = 'https://ubikiri.com/'
 SECRET_PHRASE = 'sendf'
