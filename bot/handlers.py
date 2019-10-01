@@ -61,11 +61,15 @@ async def sending(msg: types.Message):
 
     kb = keyboards.generate_markup()
     for id in id_list:
-        if USE_KEYBOARD:
-            await bot.send_message(id, MESSAGE_TEXT, reply_markup=kb)
-        else:
-            await bot.send_message(id, MESSAGE_TEXT)
-        with open(OUTPUT_FILE_WITH_ID, 'a') as file:
-            file.writelines(id)
-            file.writelines('\n')
+        try:
+            if USE_KEYBOARD:
+                await bot.send_message(id, MESSAGE_TEXT, reply_markup=kb)
+            else:
+                await bot.send_message(id, MESSAGE_TEXT)
+            with open(OUTPUT_FILE_WITH_ID, 'a') as file:
+                file.writelines(id)
+                file.writelines('\n')
+                print(f'id - {id} success')
+        except Exception as e:
+            print(f'id - {id} error- {e}')
     await msg.reply('Done')
